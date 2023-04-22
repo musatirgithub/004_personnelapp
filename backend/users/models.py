@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(
-        User, related_name="profiles", on_delete=models.SET_NULL)
+        User, related_name="profiles", on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to="pictures", default="avatar.png")
     identity_num = models.CharField(max_length=11, blank=True, null=True)
     iban = models.CharField(max_length=26, blank=True, null=True)
