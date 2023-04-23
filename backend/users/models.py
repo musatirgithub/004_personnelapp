@@ -15,3 +15,6 @@ class Profile(models.Model):
     address = models.CharField(max_length=200, blank=True, null=True)
     insurance_num = models.CharField(max_length=50, blank=True, null=True)
     insurance_company = models.CharField(max_length=25, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.user.username}"
