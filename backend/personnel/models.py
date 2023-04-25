@@ -14,7 +14,7 @@ class Department(models.Model):
 class Personnel(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     department = models.ForeignKey(
-        Department, on_delete=models.SET_NULL, null=True)
+        Department, on_delete=models.SET_NULL, null=True, related_name="personnel")
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     participation_date = models.DateTimeField(auto_now_add=True)

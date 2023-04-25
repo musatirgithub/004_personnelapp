@@ -31,3 +31,11 @@ class PersonnelSerializer(serializers.ModelSerializer):
         instance.created_by_id = self.context["request"].user.id
         instance.save()
         return instance
+
+
+class DepartmentPersonnelSerializer(serializers.ModelSerializer):
+    personnel = PersonnelSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Department
+        fields = ("id", "name", "personnel")
