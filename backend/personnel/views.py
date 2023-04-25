@@ -3,6 +3,7 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import DepartmentSerializer, PersonnelSerializer
 from .models import Department, Personnel
 from rest_framework.permissions import IsAdminUser
+from .permissions import IsOwner
 
 # Create your views here.
 
@@ -16,3 +17,4 @@ class DepartmentView(ModelViewSet):
 class PersonnelView(ModelViewSet):
     queryset = Personnel.objects.all()
     serializer_class = PersonnelSerializer
+    permission_classes = (IsOwner,)
