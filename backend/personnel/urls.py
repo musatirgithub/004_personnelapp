@@ -8,7 +8,7 @@ router.register('personnel', PersonnelView)
 
 
 urlpatterns = [
-    path("department/<str:department>", DepartmentPersonnelView.as_view())
+    path("department/<str:department>/", DepartmentPersonnelView.as_view())
 ]
 
 urlpatterns += router.urls
